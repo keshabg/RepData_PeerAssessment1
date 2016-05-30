@@ -31,7 +31,7 @@ stepsByDay <- tapply(activityData$steps, activityData$date, sum, na.rm=TRUE)
 qplot(stepsByDay, xlab='Total steps per day', ylab='Frequency using binwith 500', binwidth=500)
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
 
 ##### 2. Calculate and report the mean and median total number of steps taken per day
 
@@ -39,7 +39,7 @@ qplot(stepsByDay, xlab='Total steps per day', ylab='Frequency using binwith 500'
 stepsByDayMean <- mean(stepsByDay)
 stepsByDayMedian <- median(stepsByDay)
 ```
-* Mean: 9354.2295
+* Mean: 9354.2295082
 * Median:  10395
 
 -----
@@ -59,7 +59,7 @@ ggplot(data=averageStepsPerTimeBlock, aes(x=interval, y=meanSteps)) +
     ylab("average number of steps taken") 
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png)
 
 ##### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -97,7 +97,7 @@ stepsByDayImputed <- tapply(activityDataImputed$steps, activityDataImputed$date,
 qplot(stepsByDayImputed, xlab='Total steps per day (Imputed)', ylab='Frequency using binwith 500', binwidth=500)
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12.png) 
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png)
 
 ##### ... and Calculate and report the mean and median total number of steps taken per day. 
 
@@ -105,14 +105,14 @@ qplot(stepsByDayImputed, xlab='Total steps per day (Imputed)', ylab='Frequency u
 stepsByDayMeanImputed <- mean(stepsByDayImputed)
 stepsByDayMedianImputed <- median(stepsByDayImputed)
 ```
-* Mean (Imputed): 1.0766 &times; 10<sup>4</sup>
-* Median (Imputed):  1.0766 &times; 10<sup>4</sup>
+* Mean (Imputed): 1.0766189 &times; 10<sup>4</sup>
+* Median (Imputed):  1.0766189 &times; 10<sup>4</sup>
 
 
 ----
 
 ## Are there differences in activity patterns between weekdays and weekends?
-##### 1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
+##### 1. Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
 
 ```r
@@ -131,5 +131,6 @@ ggplot(averagedActivityDataImputed, aes(interval, steps)) +
     ylab("avarage number of steps")
 ```
 
-![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15.png) 
+![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png)
+
 
